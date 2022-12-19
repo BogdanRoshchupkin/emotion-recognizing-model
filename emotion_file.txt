@@ -1,0 +1,1 @@
+neutral,anger,contempt,disgust,fear,happy,sad,surprise,uncertain
