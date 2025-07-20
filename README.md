@@ -1,11 +1,48 @@
-# Emotion recognition
-## Motivation
-Nowadays emotion recognizing neural networks are becoming more and more popular. There are nine main emotions such as happy, sad, fear, anger, neutral, uncertain, surprise, disgust, contempt. In many business cases it can be applied. For instance in amusement park where AI can detect whether the person is sad or not and if it needs, can help people increase their happiness. Also in banking sphere where also AI conslultant may communicate with clients and help to make people happier or less nervous by dialog based on their emotions.
-## Project description
-Using neural network to recognize emotion from pictures.
-## Project structure
-`emotion_file.txt` - file with nine emotions which model can detect. `emotion-recognizing-neural-network.py` - file with implementation of the emotion recognizing model. `frozen_graph.pb` - frozen neural model. `training-neural-model.ipynb` - notebook with training the neural network
-## Necessary addition
-In `training-neural-model.ipynb` file we train the model to recognize emotions, but for detecting the faces you also have to download face-recognition library by using next command: `pip install face-recognition`. If you want to know more details about this fantastic library, [here](https://pypi.org/project/face-recognition/) is the link
-## Possible imporovements
-The emotion-recognizing model in this project has the accuracy approximately 50%. If you want to increase the accuracy, there are some tips. Firstly, you can put as input not only pictures but also audio into the model such as dialog, monolog or any emotional moment. Secondly, put several frames of video. Becasue it is important for the model to know what kind of events preceded and then it will be easier to define what emotions people feel.
+# Распознавание Эмоций
+
+![Результат работы модели](inference_result.png)
+
+## 💡 Мотивация
+Сегодня нейронные сети для распознавания эмоций становятся всё более популярными. Существует девять основных эмоций: радость, грусть, страх, гнев, нейтралитет, неуверенность, удивление, отвращение и презрение. В многих бизнес-сценариях это может быть полезно. Например, в парке аттракционов, где искусственный интеллект (ИИ) может определить, грустит ли человек, и при необходимости помочь ему стать счастливее. Также в банковской сфере, где ИИ-консультант может коммуницировать с клиентами и делать их более счастливыми или менее нервными, основываясь на их эмоциях.
+
+## 📄 Описание Проекта
+Использование нейронной сети для распознавания эмоций на изображениях.
+
+## 📁 Структура Проекта
+- `emotion_file.txt` - файл с девятью эмоциями, которые может распознать модель.
+- `emotion-recognizing-neural-network.py` - файл с реализацией модели распознавания эмоций.
+- `frozen_graph.pb` - замороженная модель нейронной сети.
+- `training-neural-model.ipynb` - ноутбук с обучением модели.
+
+## 🚀 Установка и Запуск
+
+### Установка зависимостей
+Для работы модели необходимо установить следующие библиотеки:
+
+```bash
+pip install opencv-python face-recognition numpy
+```
+
+### Запуск инференса модели
+Для запуска распознавания эмоций в реальном времени с веб-камеры выполните:
+
+```bash
+python emotion-recognizing-neural-network.py
+```
+
+**Как это работает:**
+1. Программа запустится и откроет окно с видео с веб-камеры.
+2. Модель будет автоматически обнаруживать лица в кадре.
+3. Для каждого обнаруженного лица будет показана рамка с определенной эмоцией.
+4. Для остановки программы нажмите клавишу `q`.
+
+**Распознаваемые эмоции:**
+- neutral (нейтралитет)
+- anger (гнев) 
+- contempt (презрение)
+- disgust (отвращение)
+- fear (страх)
+- happy (радость)
+- sad (грусть)
+- surprise (удивление)
+- uncertain (неуверенность)
